@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Seccion</title>
+    <link rel="stylesheet" href="Inicio.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="formulario">
+        <h1>Inicio de Sesion</h1>
+        <form method="post">
+            <form method="post" id="loginForm" onsubmit="return false;">
+                <div class="username">
+                    <input type="text">
+                    <label>Nombre de Usuario</label>
+                </div>
+                <div class="username">
+                    <input type="password">
+                    <label>Contraseña</label>
+                </div>
+                <button type="button" id="volver">Iniciar</button>
+                <div class="registrarse">
+            </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.getElementById("volver").onclick = () => {
+
+            let usuario = document.querySelector('input[type="text"]');
+            let clave = document.querySelector('input[type="password"]');
+
+            // Validación
+            if (usuario.value.trim() === "" || clave.value.trim() === "") {
+                Swal.fire({
+                    icon: "warning",
+                    title: "Campos incompletos",
+                    text: "Debes llenar todos los campos antes de continuar.",
+                    confirmButtonColor: "orange"
+                });
+                return;
+            }
+
+            // Guardar inicio de sesión
+            localStorage.setItem("logueado", "true");
+
+            Swal.fire({
+                icon: "success",
+                title: "¡Inicio de sesión exitoso!",
+                text: "Regresando...",
+                timer: 1500,
+                showConfirmButton: false
+            }).then(() => {
+
+                // Revisar si existe url guardada
+                let volverA = localStorage.getItem("pagina_anterior");
+
+                if (volverA) {
+                    localStorage.removeItem("pagina_anterior");
+                    window.location.href = volverA;
+                } else {
+                    window.location.href = "../index.html";
+                }
+            });
+        };
+    </script>
+
+</body>
+
+</html>

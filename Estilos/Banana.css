@@ -1,0 +1,20 @@
+/* Sección producto */
+.price {
+    font-size: 1.2em;
+    color: #ffed4e;
+    margin-bottom: 15px;
+}
+
+.add-button {
+    margin-top: 25px;
+    background-color: #ecca34;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #69601d;
+}

@@ -1,0 +1,95 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  padding: auto;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container h1 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #222;
+}
+
+/* Grid de productos */
+.product-grid {
+  display: flex;           
+  gap: 20px;               
+  flex-wrap: wrap;         
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Tarjeta */
+.card {
+  color: white;
+  border: 1px solid #e5e5e5;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  padding: 20px;
+  width: 260px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Imagen del producto */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Texto */
+.card h3 {
+  font-size: 1.1rem;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.card p {
+  color: black;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+/* Precio */
+.price {
+  display: block;
+  color: #ff5a00;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* Stock */
+.stock {
+  background-color: #d4f5d0;
+  color: #2a6a2d;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+a {
+  text-decoration: none;
+}
